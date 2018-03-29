@@ -2,6 +2,8 @@
 
 A helper to paginate Parse JS SDK queries
 
+![Travis](https://api.travis-ci.org/owsas/parse-paginate-query.svg?branch=master)
+
 ## Usage
 
 ```ts
