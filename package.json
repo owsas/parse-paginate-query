@@ -1,7 +1,7 @@
 {
-  "name": "typescript-module-template",
+  "name": "parse-paginate-query",
   "version": "1.0.0",
-  "description": "A typescript boilerplate to publish modules to npm",
+  "description": "A helper to paginate Parse JS SDK queries",
   "main": "out/index.js",
   "types": "out/index.d.ts",
   "scripts": {

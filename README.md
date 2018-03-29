@@ -1,8 +1,34 @@
-# Typescript module template
+# parse-paginate-query
 
-A typescript boilerplate to publish modules to npm
+A helper to paginate Parse JS SDK queries
 
 ## Usage
+
+```ts
+import Parse from 'parse/node';
+import { paginateQuery } from 'parse-paginate-query';
+
+const query = new Parse.Query('TestClass');
+query.limit(20);
+query.skip(100);
+
+paginateQuery(query)
+  .then((response) => {
+    const total = response.total; // The total of results in the db that match the query
+    const results = response.results; // The results, returned by query.find()
+    const limit = response.limit; // The limit of the query
+    const skip = response.skip; // The skip of the query 
+  });
+```
+
+## Environments supported
+* React Native
+* Node.js
+* Browser
+
+In fact, we only interact with the provided query functions, and do not call any other Parse API. Therefore you can use it for any of the provided libraries by the Parse community.
+
+## Dev Mode
 
 Clone this repo, and start adding your code in the `index.ts` file.  
 When you are done, write the tests in the `index.test.ts` file. For testing, this repo works with [Jest](https://facebook.github.io/jest/).
@@ -12,7 +38,7 @@ and send it to npm.
 
 Make sure to change the name of the package in `package.json`
 
-## Features
+## Dev Features
 * Testing with Jest
 * Linting out of the box (checks the style of your code), with TSLint
 * Build, prepublish and other scripts to help you to develop
@@ -24,7 +50,8 @@ Make sure to change the name of the package in `package.json`
 
 Developed by Juan Camilo Guarín Peñaranda,  
 Otherwise SAS, Colombia  
-2017
+http://owsas.com  
+2018
 
 ## License 
 
